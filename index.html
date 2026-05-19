@@ -1,0 +1,878 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>Stephen Creator | Premium Author Marketing Agency</title>
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@600;700;800&family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+
+<link href="https://unpkg.com/aos@2.3.4/dist/aos.css" rel="stylesheet">
+
+<style>
+
+*{
+margin:0;
+padding:0;
+box-sizing:border-box;
+scroll-behavior:smooth;
+}
+
+body{
+font-family:'Inter',sans-serif;
+background:#06070c;
+color:#fff;
+overflow-x:hidden;
+}
+
+:root{
+--gold:#d4af37;
+--dark:#06070c;
+--light:#f5f5f5;
+--card:#11131c;
+--border:rgba(255,255,255,.08);
+}
+
+::-webkit-scrollbar{
+width:8px;
+}
+
+::-webkit-scrollbar-thumb{
+background:var(--gold);
+border-radius:20px;
+}
+
+.preloader{
+position:fixed;
+top:0;
+left:0;
+width:100%;
+height:100vh;
+background:#000;
+display:flex;
+justify-content:center;
+align-items:center;
+z-index:9999;
+transition:.8s;
+}
+
+.loader{
+width:90px;
+height:90px;
+border:5px solid rgba(255,255,255,.1);
+border-top:5px solid var(--gold);
+border-radius:50%;
+animation:spin 1s linear infinite;
+}
+
+@keyframes spin{
+100%{
+transform:rotate(360deg);
+}
+}
+
+header{
+position:fixed;
+width:100%;
+top:0;
+left:0;
+padding:22px 8%;
+display:flex;
+justify-content:space-between;
+align-items:center;
+z-index:999;
+backdrop-filter:blur(14px);
+background:rgba(0,0,0,.35);
+border-bottom:1px solid rgba(255,255,255,.05);
+}
+
+.logo{
+font-size:28px;
+font-weight:800;
+font-family:'Playfair Display',serif;
+color:#fff;
+}
+
+.logo span{
+color:var(--gold);
+}
+
+nav a{
+color:#fff;
+text-decoration:none;
+margin-left:30px;
+font-size:15px;
+transition:.3s;
+}
+
+nav a:hover{
+color:var(--gold);
+}
+
+.hero{
+min-height:100vh;
+padding:160px 8% 100px;
+display:flex;
+align-items:center;
+justify-content:space-between;
+gap:60px;
+position:relative;
+overflow:hidden;
+}
+
+.hero::before{
+content:'';
+position:absolute;
+width:600px;
+height:600px;
+background:radial-gradient(circle,var(--gold),transparent);
+opacity:.08;
+top:-200px;
+right:-150px;
+}
+
+.hero-text{
+max-width:700px;
+z-index:2;
+}
+
+.hero-text h1{
+font-size:70px;
+line-height:1.1;
+margin-bottom:25px;
+font-family:'Playfair Display',serif;
+}
+
+.hero-text h1 span{
+color:var(--gold);
+}
+
+.hero-text p{
+font-size:18px;
+line-height:1.9;
+color:#d7d7d7;
+margin-bottom:35px;
+}
+
+.btns{
+display:flex;
+gap:20px;
+flex-wrap:wrap;
+}
+
+.btn{
+padding:16px 34px;
+border-radius:60px;
+text-decoration:none;
+font-weight:600;
+transition:.4s;
+display:inline-block;
+}
+
+.btn-primary{
+background:var(--gold);
+color:#000;
+}
+
+.btn-primary:hover{
+transform:translateY(-5px);
+box-shadow:0 10px 25px rgba(212,175,55,.3);
+}
+
+.btn-outline{
+border:1px solid rgba(255,255,255,.15);
+color:#fff;
+}
+
+.btn-outline:hover{
+background:#fff;
+color:#000;
+}
+
+.hero-image img{
+width:430px;
+border-radius:30px;
+box-shadow:0 25px 80px rgba(0,0,0,.6);
+border:1px solid rgba(255,255,255,.08);
+}
+
+section{
+padding:120px 8%;
+}
+
+.section-title{
+text-align:center;
+margin-bottom:70px;
+}
+
+.section-title h2{
+font-size:52px;
+font-family:'Playfair Display',serif;
+margin-bottom:18px;
+}
+
+.section-title p{
+color:#c9c9c9;
+max-width:800px;
+margin:auto;
+line-height:1.8;
+}
+
+.about{
+display:grid;
+grid-template-columns:1fr 1fr;
+gap:60px;
+align-items:center;
+}
+
+.about img{
+width:100%;
+border-radius:30px;
+}
+
+.about-content h3{
+font-size:40px;
+margin-bottom:25px;
+font-family:'Playfair Display',serif;
+}
+
+.about-content p{
+line-height:2;
+color:#d0d0d0;
+margin-bottom:20px;
+}
+
+.features{
+display:grid;
+grid-template-columns:repeat(auto-fit,minmax(260px,1fr));
+gap:30px;
+}
+
+.feature-card{
+background:var(--card);
+padding:40px 30px;
+border-radius:24px;
+border:1px solid var(--border);
+transition:.4s;
+}
+
+.feature-card:hover{
+transform:translateY(-10px);
+border-color:rgba(212,175,55,.4);
+}
+
+.feature-card h4{
+font-size:24px;
+margin-bottom:15px;
+}
+
+.feature-card p{
+line-height:1.8;
+color:#ccc;
+}
+
+.authors-grid{
+display:grid;
+grid-template-columns:repeat(auto-fit,minmax(340px,1fr));
+gap:40px;
+}
+
+.author-card{
+background:var(--card);
+border-radius:28px;
+padding:30px;
+border:1px solid var(--border);
+transition:.4s;
+}
+
+.author-card:hover{
+transform:translateY(-10px);
+}
+
+.author-top{
+display:flex;
+gap:20px;
+align-items:center;
+margin-bottom:25px;
+}
+
+.author-top img.author{
+width:100px;
+height:100px;
+object-fit:cover;
+border-radius:50%;
+border:3px solid var(--gold);
+}
+
+.author-name h3{
+font-size:25px;
+margin-bottom:8px;
+}
+
+.author-name p{
+color:#b8b8b8;
+font-size:14px;
+}
+
+.book-cover{
+width:100%;
+height:350px;
+object-fit:cover;
+border-radius:20px;
+margin-bottom:25px;
+}
+
+.author-buttons{
+display:flex;
+flex-wrap:wrap;
+gap:15px;
+}
+
+.author-buttons a{
+flex:1;
+text-align:center;
+padding:14px;
+border-radius:14px;
+text-decoration:none;
+font-size:14px;
+font-weight:600;
+transition:.3s;
+}
+
+.amazon{
+background:#ff9900;
+color:#000;
+}
+
+.goodreads{
+background:#553b08;
+color:#fff;
+}
+
+.contact-author{
+background:var(--gold);
+color:#000;
+}
+
+.author-buttons a:hover{
+transform:scale(1.05);
+}
+
+.stats{
+display:grid;
+grid-template-columns:repeat(auto-fit,minmax(220px,1fr));
+gap:30px;
+}
+
+.stat{
+text-align:center;
+background:var(--card);
+padding:50px 20px;
+border-radius:24px;
+border:1px solid var(--border);
+}
+
+.stat h3{
+font-size:55px;
+color:var(--gold);
+margin-bottom:10px;
+}
+
+.stat p{
+color:#ccc;
+}
+
+.contact-box{
+display:grid;
+grid-template-columns:1fr 1fr;
+gap:50px;
+align-items:center;
+}
+
+.contact-info h3{
+font-size:42px;
+margin-bottom:25px;
+font-family:'Playfair Display',serif;
+}
+
+.contact-info p{
+line-height:2;
+color:#d2d2d2;
+margin-bottom:20px;
+}
+
+form{
+background:var(--card);
+padding:40px;
+border-radius:30px;
+border:1px solid var(--border);
+}
+
+form input,
+form textarea{
+width:100%;
+padding:18px;
+margin-bottom:20px;
+border:none;
+outline:none;
+background:#0b0d14;
+border-radius:16px;
+color:#fff;
+font-size:15px;
+}
+
+form textarea{
+height:180px;
+resize:none;
+}
+
+form button{
+width:100%;
+padding:18px;
+border:none;
+border-radius:16px;
+background:var(--gold);
+font-weight:700;
+font-size:16px;
+cursor:pointer;
+transition:.3s;
+}
+
+form button:hover{
+transform:translateY(-4px);
+}
+
+footer{
+padding:50px 8%;
+text-align:center;
+border-top:1px solid rgba(255,255,255,.08);
+margin-top:100px;
+}
+
+footer h3{
+font-size:30px;
+margin-bottom:15px;
+font-family:'Playfair Display',serif;
+}
+
+footer p{
+color:#bdbdbd;
+line-height:1.8;
+}
+
+@media(max-width:1000px){
+
+.hero,
+.about,
+.contact-box{
+grid-template-columns:1fr;
+display:grid;
+}
+
+.hero{
+padding-top:140px;
+}
+
+.hero-text h1{
+font-size:52px;
+}
+
+.hero-image img{
+width:100%;
+}
+
+nav{
+display:none;
+}
+
+}
+
+</style>
+</head>
+
+<body>
+
+<div class="preloader">
+<div class="loader"></div>
+</div>
+
+<header>
+
+<div class="logo">
+Stephen <span>Creator</span>
+</div>
+
+<nav>
+<a href="#about">About</a>
+<a href="#services">Services</a>
+<a href="#authors">Featured Authors</a>
+<a href="#contact">Contact</a>
+</nav>
+
+</header>
+
+<section class="hero">
+
+<div class="hero-text" data-aos="fade-right">
+
+<h1>
+Helping Authors Build <span>Visibility & Influence</span>
+</h1>
+
+<p>
+Stephen Creator is a premium author marketing agency focused on helping authors elevate their visibility, strengthen their publishing presence, and build stronger audience trust through strategic digital branding and modern marketing experiences.
+</p>
+
+<div class="btns">
+
+<a href="#contact" class="btn btn-primary">
+Start Your Project
+</a>
+
+<a href="#authors" class="btn btn-outline">
+Featured Authors
+</a>
+
+</div>
+
+</div>
+
+<div class="hero-image" data-aos="fade-left">
+<img src="Stephen Creator.jpg" alt="">
+</div>
+
+</section>
+
+<section id="about">
+
+<div class="section-title" data-aos="fade-up">
+<h2>About Stephen Creator</h2>
+
+<p>
+A premium marketing experience designed for modern authors who want professional visibility and long-term brand growth.
+</p>
+
+</div>
+
+<div class="about">
+
+<img src="Stephen Creator.jpg" alt="" data-aos="zoom-in">
+
+<div class="about-content" data-aos="fade-left">
+
+<h3>
+A Strategic Approach To Author Growth
+</h3>
+
+<p>
+Stephen Creator Agency helps authors improve visibility, strengthen audience connection, and establish a more professional publishing presence through strategic digital execution and premium author branding.
+</p>
+
+<p>
+Every project is approached with creativity, precision, and long-term positioning in mind to ensure authors are presented professionally within today’s competitive publishing environment.
+</p>
+
+<p>
+All communication and project handling are professionally managed through email for better documentation, accountability, and organized collaboration.
+</p>
+
+</div>
+
+</div>
+
+</section>
+
+<section id="services">
+
+<div class="section-title" data-aos="fade-up">
+
+<h2>Why Authors Choose Us</h2>
+
+<p>
+We help authors position themselves professionally through premium branding, visibility strategy, and modern digital experiences.
+</p>
+
+</div>
+
+<div class="features">
+
+<div class="feature-card" data-aos="fade-up">
+<h4>Author Branding</h4>
+<p>
+Professional positioning systems designed to strengthen authority, credibility, and audience trust.
+</p>
+</div>
+
+<div class="feature-card" data-aos="fade-up" data-aos-delay="100">
+<h4>Book Promotion</h4>
+<p>
+Strategic visibility approaches created to help books gain stronger exposure and recognition.
+</p>
+</div>
+
+<div class="feature-card" data-aos="fade-up" data-aos-delay="200">
+<h4>Premium Experience</h4>
+<p>
+Luxury-inspired design and modern presentation crafted for serious authors and publishing professionals.
+</p>
+</div>
+
+<div class="feature-card" data-aos="fade-up" data-aos-delay="300">
+<h4>Professional Communication</h4>
+<p>
+Clear and organized communication through email to ensure smooth collaboration and project accountability.
+</p>
+</div>
+
+</div>
+
+</section>
+
+<section>
+
+<div class="section-title" data-aos="fade-up">
+
+<h2>Trusted By Authors</h2>
+
+<p>
+Professional author showcases representing creativity, visibility, and premium publishing presentation.
+</p>
+
+</div>
+
+<div class="stats">
+
+<div class="stat" data-aos="zoom-in">
+<h3>Premium</h3>
+<p>Author Branding</p>
+</div>
+
+<div class="stat" data-aos="zoom-in" data-aos-delay="100">
+<h3>Modern</h3>
+<p>Digital Experiences</p>
+</div>
+
+<div class="stat" data-aos="zoom-in" data-aos-delay="200">
+<h3>Strategic</h3>
+<p>Visibility Positioning</p>
+</div>
+
+<div class="stat" data-aos="zoom-in" data-aos-delay="300">
+<h3>Trusted</h3>
+<p>Professional Communication</p>
+</div>
+
+</div>
+
+</section>
+
+<section id="authors">
+
+<div class="section-title" data-aos="fade-up">
+
+<h2>Featured Authors</h2>
+
+<p>
+A showcase of authors connected with our premium visibility and branding experience.
+</p>
+
+</div>
+
+<div class="authors-grid">
+
+<div class="author-card" data-aos="fade-up">
+
+<div class="author-top">
+
+<a href="https://www.amazon.com/Ariel-Lawhon/e/B00HE5LAL2" target="_blank">
+<img src="Ariel Lawhon.jpg" class="author" alt="">
+</a>
+
+<div class="author-name">
+<h3>Ariel Lawhon</h3>
+<p>Featured Author</p>
+</div>
+
+</div>
+
+<img src="AL Book.jpg" class="book-cover" alt="">
+
+<div class="author-buttons">
+
+<a href="https://www.amazon.com/Ariel-Lawhon/e/B00HE5LAL2" target="_blank" class="amazon">
+Amazon
+</a>
+
+<a href="https://www.goodreads.com/author/show/485025.Ariel_Lawhon" target="_blank" class="goodreads">
+Goodreads
+</a>
+
+<a href="mailto:jamesdavidvictor6@gmail.com" class="contact-author">
+Contact
+</a>
+
+</div>
+
+</div>
+
+<div class="author-card" data-aos="fade-up" data-aos-delay="100">
+
+<div class="author-top">
+
+<a href="https://amazon.com/stores/Cynthia-Swanson/author/B00MJAX628" target="_blank">
+<img src="Cynthia Swanson.jpg" class="author" alt="">
+</a>
+
+<div class="author-name">
+<h3>Cynthia Swanson</h3>
+<p>Featured Author</p>
+</div>
+
+</div>
+
+<img src="CS Book.jpg" class="book-cover" alt="">
+
+<div class="author-buttons">
+
+<a href="https://amazon.com/stores/Cynthia-Swanson/author/B00MJAX628" target="_blank" class="amazon">
+Amazon
+</a>
+
+<a href="https://goodreads.com/author/show/8333761.Cynthia_Swanson" target="_blank" class="goodreads">
+Goodreads
+</a>
+
+<a href="mailto:authorcynthiaswanson@gmail.com" class="contact-author">
+Contact
+</a>
+
+</div>
+
+</div>
+
+<div class="author-card" data-aos="fade-up" data-aos-delay="200">
+
+<div class="author-top">
+
+<a href="https://amazon.com/Colleen-Hoover/e/B006SKAK42" target="_blank">
+<img src="Hoover Collen.jpg" class="author" alt="">
+</a>
+
+<div class="author-name">
+<h3>Colleen Hoover</h3>
+<p>Featured Author</p>
+</div>
+
+</div>
+
+<img src="HC Book.jpg" class="book-cover" alt="">
+
+<div class="author-buttons">
+
+<a href="https://amazon.com/Colleen-Hoover/e/B006SKAK42" target="_blank" class="amazon">
+Amazon
+</a>
+
+<a href="https://goodreads.com/author/show/5430144.Colleen_Hoover" target="_blank" class="goodreads">
+Goodreads
+</a>
+
+<a href="mailto:hoover.c.ink@gmail.com" class="contact-author">
+Contact
+</a>
+
+</div>
+
+</div>
+
+</div>
+
+</section>
+
+<section id="contact">
+
+<div class="contact-box">
+
+<div class="contact-info" data-aos="fade-right">
+
+<h3>
+Let’s Build Your Author Presence
+</h3>
+
+<p>
+If you’re ready to elevate your visibility, strengthen your author brand, and position your work professionally, reach out directly through the contact form.
+</p>
+
+<p>
+Every inquiry is handled professionally and privately through email communication to maintain structured collaboration and accountability throughout every stage of the project.
+</p>
+
+</div>
+
+<form 
+action="https://formspree.io/f/xbdblvjv" 
+method="POST"
+data-aos="fade-left"
+>
+
+<input type="text" name="name" placeholder="Your Name" required>
+
+<input type="email" name="email" placeholder="Your Email" required>
+
+<input type="text" name="subject" placeholder="Project Subject" required>
+
+<textarea name="message" placeholder="Tell us about your project..." required></textarea>
+
+<button type="submit">
+Send Message
+</button>
+
+</form>
+
+</div>
+
+</section>
+
+<footer>
+
+<h3>Stephen Creator Agency</h3>
+
+<p>
+Helping Authors Build Visibility, Authority & Lasting Reader Trust.
+</p>
+
+<br>
+
+<p>
+© 2026 Stephen Creator. All Rights Reserved.
+</p>
+
+</footer>
+
+<script src="https://unpkg.com/aos@2.3.4/dist/aos.js"></script>
+
+<script>
+
+AOS.init({
+duration:1200,
+once:true
+});
+
+window.addEventListener("load",()=>{
+
+document.querySelector(".preloader").style.opacity="0";
+
+setTimeout(()=>{
+document.querySelector(".preloader").style.display="none";
+},800);
+
+});
+
+</script>
+
+</body>
+</html>
